@@ -5,6 +5,8 @@ module Sprockets
       REGEX = /url\(\s*["']?(?!(?:\#|data|http))(?<relativeToCurrentDir>\.\/)?(?<path>[^"'\s)]+)\s*["']?\)/
       def self.call(input)
         context = input[:environment].context_class.new(input)
+        puts "***** context #{context.inspect}"
+        puts "***** path #{path.inspect}"
         data    = input[:data].gsub(REGEX) do |_match|
           path = Regexp.last_match[:path]
           "url(#{context.asset_path(path)})"
