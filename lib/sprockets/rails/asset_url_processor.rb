@@ -6,9 +6,9 @@ module Sprockets
       def self.call(input)
         context = input[:environment].context_class.new(input)
         puts "***** context #{context.inspect}"
-        puts "***** path #{path.inspect}"
         data    = input[:data].gsub(REGEX) do |_match|
           path = Regexp.last_match[:path]
+          puts "***** path #{path.inspect}"
           "url(#{context.asset_path(path)})"
         end
 
