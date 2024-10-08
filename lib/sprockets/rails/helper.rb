@@ -285,6 +285,7 @@ module Sprockets
         end
 
         def asset_path(path, digest, allow_non_precompiled = false)
+          puts "***** Manifest#asset_path #{path.inspect}"
           if digest
             digest_path path, allow_non_precompiled
           end
@@ -321,7 +322,7 @@ module Sprockets
         end
 
         def asset_path(path, digest, allow_non_precompiled = false)
-          puts "***** asset_path for #{path.inspect}"
+          puts "***** Environment#asset_path #{path.inspect}"
           # Digests enabled? Do the work to calculate the full asset path.
           if digest
             digest_path path, allow_non_precompiled
