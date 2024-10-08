@@ -9,6 +9,7 @@ module Sprockets
         data    = input[:data].gsub(REGEX) do |_match|
           path = Regexp.last_match[:path]
           puts "***** path #{path.inspect}"
+          puts "***** asset_path #{context.asset_path(path)}"
           "url(#{context.asset_path(path)})"
         end
 
