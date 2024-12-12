@@ -14,6 +14,7 @@ module Sprockets
           "url(#{context.asset_path(path)})"
         end
 
+        puts "***** --------------------------------"
         context.metadata.merge(data: data)
       end
     end
