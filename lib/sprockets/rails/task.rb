@@ -9,8 +9,6 @@ module Sprockets
       attr_accessor :app
 
       def initialize(app = nil)
-        puts "***** instantiate Sprockets::Rails::Task"
-        puts caller(0)
         self.app = app
         super()
       end
