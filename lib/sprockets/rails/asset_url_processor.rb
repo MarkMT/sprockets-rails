@@ -4,18 +4,18 @@ module Sprockets
     class AssetUrlProcessor
       REGEX = /url\(\s*["']?(?!(?:\#|data|http))(?<relativeToCurrentDir>\.\/)?(?<path>[^"'\s)]+)\s*["']?\)/
       def self.call(input)
-        #puts "\n***** --------------------------------"
-        #puts "***** Sprockets::Rails::AssetUrlProcessor"
+        puts "\n***** --------------------------------"
+        puts "***** Sprockets::Rails::AssetUrlProcessor"
         context = input[:environment].context_class.new(input)
         data    = input[:data].gsub(REGEX) do |_match|
-          #puts "***** _match #{_match.inspect}"
+          puts "***** _match #{_match.inspect}"
           path = Regexp.last_match[:path]
-          #puts "***** path #{path.inspect}"
-          #puts "***** url(#{context.asset_path(path)})"
+          puts "***** path #{path.inspect}"
+          puts "***** url(#{context.asset_path(path)})"
           "url(#{context.asset_path(path)})"
         end
 
-        #puts "***** --------------------------------"
+        puts "***** --------------------------------"
         context.metadata.merge(data: data)
       end
     end
