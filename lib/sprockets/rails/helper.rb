@@ -75,6 +75,9 @@ module Sprockets
       # Writes over the built in ActionView::Helpers::AssetUrlHelper#compute_asset_path
       # to use the asset pipeline.
       def compute_asset_path(path, options = {})
+        puts "***** compute_asset_path for #{path.inspect}"
+        puts caller(0)
+        raise 'stop here'
         debug = options[:debug]
 
         if asset_path = resolve_asset_path(path, debug)
