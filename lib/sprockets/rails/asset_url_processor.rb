@@ -11,7 +11,7 @@ module Sprockets
           puts "***** _match #{_match.inspect}"
           path = Regexp.last_match[:path]
           puts "***** path #{path.inspect}"
-          puts "***** url(#{context.asset_path(path)})"
+          puts "***** url(#{context.asset_path(path)})\n"
           "url(#{context.asset_path(path)})"
         end
 
