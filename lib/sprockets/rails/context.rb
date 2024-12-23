@@ -28,6 +28,7 @@ module Sprockets
         if asset_uri
           asset = link_asset(path)
           digest_path = asset.digest_path
+          puts "***** digest_path #{digest_path.inspect}"
           path = digest_path if digest_assets
           File.join(assets_prefix || "/", path)
         else
