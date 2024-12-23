@@ -5,6 +5,7 @@ module Sprockets
       REGEX = /url\(\s*["']?(?!(?:\#|data|http))(?<relativeToCurrentDir>\.\/)?(?<path>[^"'\s)]+)\s*["']?\)/
       def self.call(input)
         puts "\n***** --------------------------------"
+        puts "***** #{input[:filename].inspect}"
         puts "***** Sprockets::Rails::AssetUrlProcessor"
         context = input[:environment].context_class.new(input)
         data    = input[:data].gsub(REGEX) do |_match|
