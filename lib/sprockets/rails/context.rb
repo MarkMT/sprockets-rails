@@ -31,7 +31,8 @@ module Sprockets
           path = digest_path if digest_assets
           File.join(assets_prefix || "/", path)
         else
-          super
+          puts "***** #{result = super}"
+          result
         end
       end
     end
