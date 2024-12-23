@@ -14,6 +14,7 @@ module Sprockets
       end
 
       def compute_asset_path(path, options = {})
+        puts "***** context.compute_asset_path"
         @dependencies << 'actioncontroller-asset-url-config'
 
         begin
