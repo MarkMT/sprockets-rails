@@ -23,6 +23,7 @@ module Sprockets
           # nil instead of raising an exception.
         end
 
+        puts "***** asset_uri #{asset_uri.inspect}"
         if asset_uri
           asset = link_asset(path)
           digest_path = asset.digest_path
